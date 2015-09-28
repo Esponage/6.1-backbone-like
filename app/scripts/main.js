@@ -1,14 +1,21 @@
-var models = require('models');
-var views = require('views');
+var Likes = require('models/likes');
 
 $(document).ready(function(){
   $('body').prepend(JST.application());
 
-  var view = new PostsView();
 
-  $(document).on('posts:fetched', function(event, posts){
-    view.showPosts(posts);
-  });
 
-  Post.fetch();
+var button = new Likes();
+$('.likesButton').on('click', function(){
+  button.likesButton();
+});
+
+
+button.on('change:likesCount', function(){
+  if (button.get('likesCount') < 2) {
+  $('.likesButton').text(button.get('likesCount') + " like");
+} else {
+   $('.likesButton').text(button.get('likesCount') + " likes");
+ }
+});
 });

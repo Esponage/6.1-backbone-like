@@ -19,3 +19,14 @@ body {
   color: $base-font-color;
   font-family: $base-font-family;
 }
+
+.likesButton {
+  margin-top: 15%;
+  margin-right: 35%;
+  margin-bottom: 15%;
+  margin-left: 35%;
+  border-color: lightgray;
+  text-align: center;
+  width: 250px;
+  height: 100px;
+}
